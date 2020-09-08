@@ -1,11 +1,13 @@
-  @media screen and (min-width: 801px)
-.site-search, .leftcolumn, .social {
+@media screen and (min-width: 801px)
+    .site-search, .leftcolumn, .social {
     display: block!important;
+    border-right-style: dotted;
 }
 
 @media screen and (max-width: 1280px)
 .leftcolumn {
     width: 230px;
+    border-right-style: dotted;
 }
 
 .leftcolumn {
@@ -13,6 +15,7 @@
     float: left;
     font-size: 16px;
     color: #4f4f4f;
+    border-right-style: inset; 
 }
 
 @media screen and (max-width: 1280px)
@@ -40,3 +43,36 @@ div {
     margin: 0 auto;
 }
 
+.nav-pills .nav-link.active, .nav-pills .nav-link.active:hover,.nav-pills .nav-link.active:focus{
+    background-color: #ffb20c;
+    color:white;
+    font-weight:550;
+}
+
+.nav-link:hover {
+    background-color: #f2deb1;
+}
+
+.nav-link {
+    color: #0b2972;
+}
+
+#policy-table-1 {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#policy-table-1 td, #policy-table-1 th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#policy-table-1 tr:nth-child(even){background-color: #f2f2f2;}
+
+#policy-table-1 th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0b2972;
+  color: white;
+}
