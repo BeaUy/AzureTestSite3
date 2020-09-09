@@ -25,8 +25,8 @@ body {
 header {
 	width: 100%;
 	height: 5%;
-	background-color: #52bad5;
-	border-bottom: 1px solid #2C9AB7;
+	background-color: #0b2972;
+	border-bottom: 1px solid #0b2972;
 }
 .logo {
 	color: #fff;
@@ -38,6 +38,8 @@ header {
 	margin-left: 25px;
 	letter-spacing: 4px;
 }
+
+
 nav {
 	float: right;
 	width: 50%;
@@ -74,24 +76,24 @@ ul li:hover a {
 
 .searchTerm {
   width: 100%;
-  border: 3px solid #00B4CC;
+  border: 3px solid #0b2972 ;
   border-right: none;
   padding: 5px;
   height: 20px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: #9DBFAF;
+  color: #0b2972 ;
 }
 
 .searchTerm:focus{
-  color: #00B4CC;
+  color: #0b2972;
 }
 
 .searchButton {
   width: 40px;
   height: 36px;
-  border: 1px solid #00B4CC;
-  background: #00B4CC;
+  border: 1px solid #0b2972 ;
+  background: #0b2972 ;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
@@ -190,7 +192,7 @@ ul li:hover a {
 }
 /* Parallax Section */
 .banner {
-	background-color: #2D9AB7;
+	background-color: #0b2972 ;
 	background-image: url(parallax.png);
 	height: 400px;
 	background-attachment: fixed;
@@ -273,8 +275,8 @@ footer .footer_column p {
 	transition: all 0.3s linear;
 }
 .button:hover {
-	background-color: #FEFEFE;
-	color: #C4C4C4;
+	background-color: #0b2972;
+	color: #ffb20c ;
 	cursor: pointer;
 }
 .copyright {
