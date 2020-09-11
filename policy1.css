@@ -127,3 +127,25 @@ div {
         padding: 10px;
         background-color: #d0e2bc;
 }
+
+#policy-table-2 {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: auto; 
+  width: 100%;
+}
+
+#policy-table-2 td, #policy-table-2 th {
+  border: 1px solid #ddd;
+  padding: 2px;
+}
+
+#policy-table-2 tr:nth-child(even){background-color: #f2f2f2;}
+
+#policy-table-2 th {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: left;
+  background-color: #0b2972;
+  color: white;
+}
