@@ -1,60 +1,47 @@
-
-
     <html>
     
     <head>
-      <title>
-      Bank Policy Catalogue
-      </title>
+      <title>Bank Policy Catalogue</title>
       <link rel="stylesheet" type="text/css" href="login.css">
       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
 
-    <body>
-    
-    <script language="javascript">
-    function check(form)/*function to check userid & password*/
-    {
-     /*the following code checkes whether the entered userid and password are matching*/
-     if(form.userid.value == "bdo-admin" && form.pswrd.value == "bdo-pass")
-      {
-        window.open('index.html', '_self')/*opens the target page while Id & password matches*/
-      }
-     else
-     {
-       alert("Error Password or Username")/*displays error message*/
-      }
-    }
-    </script>
+    <body style="background-color: #0b2972;">
+      <script language="javascript">
+        /*function to check username & password*/
+        function check(form) {
+         /* check if input username and pass matches */
+         if(form.userid.value == "bdo-admin" && form.pswrd.value == "bdo-pass") {
+            window.open('index.html', '_self') /* opens the target page while Id & password matches */
+          }
+         else {
+           alert("Error Password or Username") /* displays error message */
+          }
+        }
+      </script>
 
-<div class="simple-login-container">
-  <div id="formContent">
-    <!-- Tabs Titles -->
+      <div class="simple-login-container">
+        <div id="formContent">
+          <img src="bdo-logo.jpg" id="bdo-logo">
+          <!-- Login Form -->
+          <form>
+            <div class="row col-md-12 form-group">
+              <input type="text" id="login" class="form-control" name="userid" placeholder="Username">
+            </div>
+            <div class="row col-md-12 form-group">
+              <input type="password" id="password" class="form-control" name="pswrd" placeholder="Password">
+            </div>
+            <div class="row col-md-12 form-group">
+              <input type="button" class="btn btn-block btn-login" onclick="check(this.form)" value="Login">
+            </div>
+          </form>
 
-    <!-- Icon -->
-    
-
-    <!-- Login Form -->
-    <form>
-      <div class="row col-md-12 form-group">
-        <input type="text" id="login" class="form-control" name="userid" placeholder="Username">
+        </div>
       </div>
-      <div class="row col-md-12 form-group">
-        <input type="password" id="password" class="form-control" name="pswrd" placeholder="Password">
-      </div>
-      <div class="row col-md-12 form-group">
-        <input type="button" class="btn btn-block btn-login" onclick="check(this.form)" value="Login">
-      </div>
-    </form>
-
-  </div>
-</div>
-
-
-
     </body>
+
     </html>
 
 
