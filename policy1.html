@@ -11,7 +11,32 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+    $(".like").click(function(){
+        var input = $(this).siblings('.qty-like');
+        input.val(parseFloat(input.val()) + 1);
+        
+    });
+    $(".dislike").click(function(){
+        var input = $(this).siblings('.qty-dislike');
+        input.val(parseFloat(input.val()) + 1);
+    });
+  });
+</script>
 
+<!-- modal script -->
+<script type="text/javascript">
+  $('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('New message to ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+})
+</script>
 
 </head>
 <body>
@@ -192,6 +217,15 @@
     <!-- content area -->
     <div class="centercolumn">
         <div class="tab-content">
+            <!-- Home Pane -->
+            <div class="container tab-pane active">
+                <h2>Home</h2>  
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel bibendum dui, a scelerisque massa. Nullam iaculis in massa nec dapibus. 
+                Quisque quis felis nulla. Aenean efficitur mi nec vulputate volutpat. Morbi elementum, leo ac finibus porta, nunc lacus feugiat massa, et tincidunt 
+                augue erat a eros. Sed laoreet mattis libero, ac tempus risus. Proin eleifend leo neque, sit amet volutpat nisi commodo vel. Nam dapibus odio et 
+                magna rutrum tincidunt at eget ligula. Nam neque urna, porta vel ornare hendrerit, fermentum quis lorem. Sed commodo tincidunt eros eu sollicitudin. 
+                Fusce id sem vel diam ullamcorper suscipit et quis felis.</p>
+            </div>
             <!-- Level 0: Retail Banks Content -->
                 <!-- Level 1: Retail Banks - SME-->
                 <div id="level1-retail-banks-SME" class="container tab-pane">
@@ -311,20 +345,443 @@
                     </div>
                 </div>
 
-                <!-- Level 2: SME - Manage Deposit Account -->
-                <!-- Level 2: SME - Manage Loans -->
-                <!-- Level 2: SME - Manage Cards -->
-                <!-- Level 2: SME - Manage Forex -->
-                <!-- Level 2: SME - Manage Investments -->
-                <!-- Level 2: SME - Manage Bancassurance -->
-                <!-- Level 2: SME - Manage Safety Box Facilities -->
-                
+                    <!-- Level 2: For all products -->
+                    <div id="for-all-products" class="container tab-pane"> 
+
+                        <h2>For All Products</h2>  
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+
+                        <table id = "all-products-table">
+                            <tr>
+                                <th style="width: 75%">Policy Name</th>
+                                <th>Date Issued</th>    
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="nav-link" data-toggle="pill" href="#">Customer Journey</a>
+                                </td>
+                                <td>September 21, 2020</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="nav-link" data-toggle="pill" href="#">Process View</a>
+                                </td>
+                                <td>September 21, 2020</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="nav-link" data-toggle="pill" href="#marketing">Marketing</a>
+                                </td>
+                                <td>September 21, 2020</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="nav-link" data-toggle="pill" href="#">Account Opening</a>
+                                </td>
+                                <td>September 21, 2020</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="nav-link" data-toggle="pill" href="#">Deposit and Withdraw Funds</a>
+                                </td>
+                                <td>September 21, 2020</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="nav-link" data-toggle="pill" href="#">Interest Rates</a>
+                                </td>
+                                <td>September 21, 2020</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a class="nav-link" data-toggle="pill" href="#">Account Closure</a>
+                                </td>
+                                <td>September 21, 2020</td>
+                            </tr>
+                        </table>
+
+                        <h5 style="margin-top: 30px;"> <a  class="nav-link" data-toggle="pill" href="#related-topics">Related Topics</a>  </h5> 
+                    </div>
+
+                    <!-- Related Topics -->
+                    <div id="related-topics" class="container tab-pane">
+                        <h2>Related Topics</h2>  
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <div class="container">
+                            <div id="accordion">
+                              
+                              <div class="card">
+                                <div class="card-header">
+                                  <a class="card-link" data-toggle="collapse" href="#manage-fraud">Manage Fraud/AML</a>
+                                </div>
+                                <div id="manage-fraud" class="collapse" data-parent="#accordion">
+                                  <div class="card-body">
+                                    <table id = "sme-table">
+                                        <tr><th style="width: 75%">Policy Name</th><th>Date Issued</th></tr>
+                                        <tr><td>Establish/Maintain business rules to detect fraud or suspicious activities</td><td>September 21, 2020</td></tr>
+                                        <tr><td><a class="nav-link" data-toggle="pill" href="#">Detect fraud or suspicious activities</a></td><td>September 21, 2020</td></tr>
+                                        <tr><td>Investigate and report fraud incident</td><td>September 21, 2020</td></tr>
+                                        <tr><td>Investigate application fraud enquiry  </td><td>September 21, 2020</td></tr>
+                                        <tr><td>Investigate fraud claims  </td><td>September 21, 2020</td></tr>
+                                        <tr><td>Review and investigate reconciliation  </td><td>September 21, 2020</td></tr>
+                                        <tr><td>Conduct systemic fraud investigation and monitoring  </td><td>September 21, 2020</td></tr>
+                                        <tr><td>Monitor channel fraud  </td><td>September 21, 2020</td></tr>
+                                        <tr><td>Monitor payments fraud  </td><td>September 21, 2020</td></tr>
+                                        <tr><td><a class="nav-link" data-toggle="pill" href="#">Manage large deposits</a></td><td>September 21, 2020</td></tr>
+                                        <tr><td><a class="nav-link" data-toggle="pill" href="#">Suspend/resume account</a></td><td>September 21, 2020</td></tr>
+                                        <tr><td><a class="nav-link" data-toggle="pill" href="#">Engage with regulatory and legislative bodies</a></td><td>September 21, 2020</td></tr>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="card">
+                                <div class="card-header">
+                                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">Provide Legal Support And Advise</a>
+                                </div>
+                                <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <table id = "sme-table">
+                                            <tr><th style="width: 75%">Policy Name</th><th>Date Issued</th></tr>
+                                            <tr><td>Develop legal policies and procedures</td><td>September 21, 2020</td></tr>
+                                            <tr><td>Prepare and manage legal budget</td><td>September 21, 2020</td></tr>
+                                            <tr><td>Engage and manage external counsel</td><td>September 21, 2020</td></tr>
+                                            <tr><td>Provide legal representation</td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Handle legal disputes</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Respond to legal enquiries</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td>Monitor legislative changes and inform stakeholders</td><td>September 21, 2020</td></tr>
+                                            <tr><td>Draft laws and issue by-laws</td><td>September 21, 2020</td></tr>
+                                            <tr><td>Maintain subject matter expertise</td><td>September 21, 2020</td></tr>
+                                            <tr><td>Manage and protect intellectual property</td><td>September 21, 2020</td></tr>
+                                        </table>
+                                      </div>
+                                </div>
+                              </div>
+                              
+                              <div class="card">
+                                <div class="card-header">
+                                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">Manage Legal Documents And Contracts</a>
+                                </div>
+                                <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <table id = "sme-table">
+                                            <tr><th style="width: 75%">Policy Name</th><th>Date Issued</th></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Define legal document management requirements </a></td><td>September 21, 2020</td></tr>
+                                            <tr><td>Define legal document management policies and procedures</td><td>September 21, 2020</td></tr>
+                                            <tr><td>Draft and review contract/SLAs</td><td>September 21, 2020</td></tr>
+                                            <tr><td>Store and protect physical legal documents</td><td>September 21, 2020</td></tr>
+                                            <tr><td>Store and protect digital legal documents</td><td>September 21, 2020</td></tr>
+                                            <tr><td>Manage contract renewal, termination and close out</td><td>September 21, 2020</td></tr>
+                                        </table>
+                                      </div>
+                                </div>
+                              </div>
+    
+                              <div class="card">
+                                <div class="card-header">
+                                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">Business Continuity Planning And Management</a>
+                                </div>
+                                <div id="collapseFour" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <table id = "sme-table">
+                                            <tr><th style="width: 75%">Policy Name</th><th>Date Issued</th></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Co-ordinate business continuity</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Plan business continuity</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Plan infrastructure recovery</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Plan serious incident management</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Manage business continuity methodologies</a></td><td>September 21, 2020</td></tr>
+                                            
+                                            
+                                        </table>
+                                      </div>
+                                </div>
+                              </div>
+                              
+                              <div class="card">
+                                <div class="card-header">
+                                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">Manage Audit Protocols</a>
+                                </div>
+                                <div id="collapseFive" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <table id = "sme-table">
+                                            <tr><th style="width: 75%">Policy Name</th><th>Date Issued</th></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Define roles and responsibilities for audit</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td>Develop audit processes</td><td>September 21, 2020</td></tr>
+                                            <tr><td>Establish audit tools</td><td>September 21, 2020</td></tr>
+                                            <tr><td>Develop stakeholder engagement plan</td><td>September 21, 2020</td></tr>
+                                            <tr><td>Development and maintain audit manual</td><td>September 21, 2020</td></tr>
+                                        </table>
+                                      </div>
+                                </div>
+                              </div>
+                            
+                              <div class="card">
+                                <div class="card-header">
+                                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseSix">Manage Government And Industry Relationships</a>
+                                </div>
+                                <div id="collapseSix" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <table id = "sme-table">
+                                            <tr><th style="width: 75%">Policy Name</th><th>Date Issued</th></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Plan, build and manage government relationships</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Manage relationships with quasi-government bodies</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Manage relationships with trade/industry groups</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Manage lobby activities</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Manage regulatory relationships</a></td><td>September 21, 2020</td></tr>
+                                        </table>
+                                      </div>
+                                </div>
+                              </div>
+    
+                              <div class="card">
+                                <div class="card-header">
+                                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseSeven">Manage Media & Public Relationships</a>
+                                </div>
+                                <div id="collapseSeven" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <table id = "sme-table">
+                                            <tr><th style="width: 75%">Policy Name</th><th>Date Issued</th></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Develop media and PR policies and procedures</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Develop media and PR strategy</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Develop media and PR plan and budget</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Manage media and PR relationships</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Manage press releases</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Develop crisis management and emergency communications</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Manage events and sponsorship</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Maintain a database of media agencies and contacts</a></td><td>September 21, 2020</td></tr>
+                                        </table>
+                                      </div>
+                                </div>
+                              </div>
+                            
+                              <div class="card">
+                                <div class="card-header">
+                                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseEight">Manage Cross Sell</a>
+                                </div>
+                                <div id="collapseEight" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <table id = "sme-table">
+                                            <tr><th style="width: 75%">Policy Name</th><th>Date Issued</th></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Identify cross-sell leads</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Cross-sell products</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Track and monitor cross sales</a></td><td>September 21, 2020</td></tr>
+                                        </table>
+                                      </div>
+                                </div>
+                              </div>
+
+                              <div class="card">
+                                <div class="card-header">
+                                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseNine">Manage Customer Requests And Complaints</a>
+                                </div>
+                                <div id="collapseNine" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <table id = "sme-table">
+                                            <tr><th style="width: 75%">Policy Name</th><th>Date Issued</th></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Retrieve customer's record</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Handle customer requests/inquires</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Resolve customer complaints</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Manage escalations</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Process self-service requests</a></td><td>September 21, 2020</td></tr>
+                                            <tr><td><a class="nav-link" data-toggle="pill" href="#">Manage exceptions</a></td><td>September 21, 2020</td></tr>
+                                        </table>
+                                      </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
                 <!-- Level 1: Retail Banks - Individual-->
                 <div id="level1-retail-banks-individual" class="container tab-pane">
                     <h2>Individual</h2>  
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
 
+                <!-- Level 2: Marketing -->
+                <div id="marketing" class="container tab-pane fade"><br>
+                    <h3>Deposit Account Opening</h3>
+                    <h5>Customer Principles</h5>
+                    <ul>
+                      <li>BDO will find ways for the customer.</li>
+                      <li>BDO will be the number trusted bank of the customers.</li>
+                      <li>BDO will transact with customers only in accordance with the law</li>
+                    <br>
+                    <h5>Policy on Deposit Account Opening</h5>
+                    <br>
+                    <h5>1.1 Scope</h5> 
+                    <p>This policy covers all deposit account opening in branches, including but not limited to – </p>
+                    <ul>
+                      <li>Checking account</li>
+                      <li>Savings account</li>
+                      <li>Time deposits account</li>
+                    </ul>
+                    <br>        
+                    <p>This policy does not cover deposit account opened through BDO web apps and mobile apps</p> 
+          
+                    </ul> 
+                    <div class="container">
+                      <div id="accordion">
+                        <div class="card">
+                          <div class="card-header">
+                            <a class="card-link" data-toggle="collapse" href="#collapseOne">1. Pre-Sales</a>
+                          </div>
+                          <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                            <div class="card-body">
+                              <ul>
+                                <li>Customer outcome </li>
+                                <li>Customer guidance</li>
+                                <li>Operation guidelines</li>
+                                <li>Prohibited actions </li>
+                                <li>Approving authorities (branch view)</li>
+                                <li>Relevant BDO units and contacts </li>
+                              </ul>
+
+                              <div class="container">
+                                  <div id="accordion1">
+                                      <div class="card">
+                                          <div class="card-header"><a class="card-link" data-toggle="collapse" href="#collapse1">1.2.1 Policy</a></div>
+                                          <div id="collapse1" class="collapse" data-parent="#accordion1"><div class="card-body">
+                                              <ul>
+                                                  <li>BDO is responsible to protect dignity of every person.</li>
+                                                  <li>A person who entered or uses a BDO facility is a client of BDO.</li>
+                                              </ul>
+                                          </div></div>
+                                      </div>
+                                      <div class="card">
+                                        <div class="card-header"><a class="card-link" data-toggle="collapse" href="#collapse2">1.2.2 Customer Outcome</a></div>
+                                        <div id="collapse2" class="collapse" data-parent="#accordion1"><div class="card-body">
+                                            <ul>
+                                                <li>Clients are happy to you, whether they opened an account or not.</li>
+                                                <li>Clients are happy, because your concern includes the beneficiaries of the account</li>
+                                                <li>Clients are happy, because you have provided a sound financial advice.</li>
+                                            </ul>
+                                        </div></div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header"><a class="card-link" data-toggle="collapse" href="#collapse3">1.2.3 Operational guideline</a></div>
+                                        <div id="collapse3" class="collapse" data-parent="#accordion1"><div class="card-body">
+                                            <ul>
+                                                <li>Includes end to end procedures from branch to head office support services.</li>
+                                            </ul>
+                                        </div></div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header"><a class="card-link" data-toggle="collapse" href="#collapse4">1.2.4 Prohibited actions/Strict compliance</a></div>
+                                        <div id="collapse4" class="collapse" data-parent="#accordion1"><div class="card-body">
+                                            <ul>
+                                                <li>Blank signing of applications are strictly prohibited.</li>
+                                                <li>Unethical actions are prohibited.</li>
+                                                <li>Customer due diligence procedures must be independently evaluated.</li>
+                                            </ul>
+                                        </div></div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header"><a class="card-link" data-toggle="collapse" href="#collapse5">1.2.5 Approving Authorities</a></div>
+                                        <div id="collapse5" class="collapse" data-parent="#accordion1"><div class="card-body">
+                                            <ul>
+                                                <li>Deposits PHP 10 million and below - Branch manager</li>
+                                                <li>Deposits more than PHP 10 million to PHP 100 million - Area head</li>
+                                                <li>Deposits more than PHP 100 million to PHP 300 million - Regional head</li>
+                                                <li>Deposits more than PHP 300 million - Branch banking head</li>
+                                            </ul>    
+                                        </div></div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header"><a class="card-link" data-toggle="collapse" href="#collapse6">1.2.6 Contacts</a></div>
+                                        <div id="collapse6" class="collapse" data-parent="#accordion1"><div class="card-body">
+                                            <ul>
+                                                <li>Help desk 24/7 - 891 0307 or you may email at bdohelpdesk@bdo.com.ph</li>
+                                                <li>Branch manager - 0977 885 8899</li>
+                                                <li>Area head - cbmarquez@bdo.com.ph</li>
+                                                <li>Regional head - adchua@bdo.com.ph</li>
+                                                <li>Branch banking head - glim@bdo.com.ph</li>
+                                            </ul>    
+                                        </div></div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header"><a class="card-link" data-toggle="collapse" href="#collapse7">1.2.7 Standards</a></div>
+                                        <div id="collapse7" class="collapse" data-parent="#accordion1"><div class="card-body">
+                                            <ul>
+                                                <li>BDO quality standards updated version 10.1 dated January 2020</li>
+                                                <li>BSP circular Framework on basic deposit account dated February 2018</li>
+                                                <li>BSP circular on social media risk management</li>
+                                            </ul>
+                                        </div></div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                            2. Application
+                          </a>
+                          </div>
+                          <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                              3. Processing
+                            </a>
+                          </div>
+                          <div id="collapseThree" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
+                              4. Opening
+                            </a>
+                          </div>
+                          <div id="collapseFour" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">
+                              5. Monitoring
+                            </a>
+                          </div>
+                          <div id="collapseFive" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="like-dislike">
+                        <a class="like"><i class="fa fa-thumbs-up"></i></a>
+                        <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
+                        <a class="dislike"><i class="fa fa-thumbs-down"></i></a> 
+                        <input class="qty-dislike" name="qty-dislike" readonly="readonly" type="text" value="0" /> 
+                      <button type="button" class="comment-button" data-toggle="modal" data-target="#commentModal"><i class="fa fa-comment" aria-hidden="true"></i></button>
+                      </div>
+          
+                  </div>
+            
             <!-- Level 0: Private Banks Content -->
             <div id="level0-private-banks" class="container tab-pane">
                 <h2>Private Banks</h2>  
@@ -376,6 +833,35 @@
             </div>
 
         </div>
+
+        <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="policy-name" class="col-form-label">Policy Name:</label>
+                      <input type="text" class="form-control" id="policy-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label">Message:</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Comment</button>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
 </body>
 </html>
