@@ -7,612 +7,375 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="policy1.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
-    $(function(){
-    $(".like").click(function(){
-        var input = $(this).siblings('.qty-like');
-        input.val(parseFloat(input.val()) + 1);
-        
-    });
-    $(".dislike").click(function(){
-        var input = $(this).siblings('.qty-dislike');
-        input.val(parseFloat(input.val()) + 1);
-    });
-  });
-</script>
 
-<!-- modal script -->
-<script type="text/javascript">
-  $('#exampleModal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var recipient = button.data('whatever') // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this)
-  modal.find('.modal-title').text('New message to ' + recipient)
-  modal.find('.modal-body input').val(recipient)
-})
-</script>
+
 </head>
 <body>
+    <!-- sidebar menu -->
+    <nav id="sideb">
+        <div class="rectangle"></div>
+        <div class="leftcolumn">
+            <img src="bdo-logo.jpg" style="width: 240px; height: auto; border-right-style: inset; padding: 20px;"/>
+            <!-- Costumer Types Menu -->
+            <h4>Costumer Types</h4>
+            <div class="nav flex-column">
+                <!-- COLLAPSIBLE-BUTTON-1: Retail Banking -->
+                <button class="btn level0" data-toggle="collapse" data-target="#level0-retail-banking">Retail Banking</button> 
+                    <div id="level0-retail-banking" class="collapse">
+                        <ul class = "nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" id="sme" data-toggle="pill" href="#level1-retail-banks-SME">SME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="indiv" data-toggle="pill" href="#level1-retail-banks-individual">Individuals</a>
+                            </li>
+                        </ul>
+                    </div>
 
-<div class="container">
-  <br>
-  <h2 href="index.html">Policy Index</h2>
-  <br>
-  
+                <!-- COLLAPSIBLE-BUTTON-2: Private Banks -->
+                <!--
+                <button class="btn btn-primary" data-toggle="collapse" data-target="#collap-button-2">Private Banks</button>
+                    <div id="collap-button-2" class="collapse">
+                        <ul class = "nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#level0-1">Information Technology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#level0-2">Information Technology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#level0-3">Information Technology</a>
+                            </li>
+                        </ul>
+                    </div> 
+                -->
+                <button class="btn level0" data-toggle="pill" href="#level0-private-banks">Private Banks</button>
 
-<div class="wrapper">
-  <!-- Nav pills -->
-    <nav>
-    <div class="leftcolumn">
-    <ul class="nav nav-pills flex-column" role="tablist">
-      <li>For BDO Bankers</li>
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#menu1">Branch Banking </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#menu2">Institutional Banking</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#menu3">Central Operations</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#menu4">Information Technology</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#menu5">Human Resources</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#menu6">Marketing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#menu7">Corporate Planning</a>
-      </li>
-      <li>Products</li>
-      <!--
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#menu8">Deposit Account Opening</a>
-      </li> -->
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#menu9">Consumer Lending</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#menu10">Payments and Transaction Banking</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#menu11">Treasury and Asset Management</a>
-      </li>
-    </ul>
-    </div>
+                <!-- COLLAPSIBLE-BUTTON-3: Corporate -->
+                <!--
+                <button class="btn btn-primary" data-toggle="collapse" data-target="#collap-button-3">Corporate</button>
+                    <div id="collap-button-3" class="collapse">
+                        <ul class = "nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#level0-1">Information Technology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#level0-2">Information Technology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#level0-3">Information Technology</a>
+                            </li>
+                        </ul>
+                    </div>
+                --> 
+                <button class="btn level0" data-toggle="pill" href="#level0-corporate">Corporate</button>
+
+                <!-- COLLAPSIBLE-BUTTON-4: Government -->
+                <!--
+                <button class="btn btn-primary" data-toggle="collapse" data-target="#collap-button-4">Government</button>
+                    <div id="collap-button-4" class="collapse">
+                        <ul class = "nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#level0-1">Information Technology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#level0-2">Information Technology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#level0-3">Information Technology</a>
+                            </li>
+                        </ul>
+                    </div>
+                -->
+                <button class="btn level0" data-toggle="pill" href="#level0-government">Government</button>
+
+            </div>
+
+            <!-- Index Menu -->
+            <h4 style = "margin-top: 35px;">Index</h4>
+            <div class="nav flex-column">
+                <!-- COLLAPSIBLE-BUTTON-1: Support Services -->
+                <button class="btn level0" data-toggle="collapse" data-target="#level0-support-services">Support Services</button> 
+                    <div id="level0-support-services" class="collapse">
+                        <ul class = "nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" id = "ss1" data-toggle="pill" href="#level1-retail-banks-SME">Manage Human Capital</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id = "ss2" data-toggle="pill" href="#level1-retail-banks-individual">Manage Treasury</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id = "ss3" data-toggle="pill" href="#level1-retail-banks-SME">Manage Information Technology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id = "ss4" data-toggle="pill" href="#level1-retail-banks-SME">Manage Administration And Procurement Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id = "ss5" data-toggle="pill" href="#level1-retail-banks-SME">Manage Finance and Accounting Procedures</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id = "ss6" data-toggle="pill" href="#level1-retail-banks-SME">Manage Transformation/Change</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id = "ss7" data-toggle="pill" href="#level1-retail-banks-SME">Manage Data</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id = "ss8" data-toggle="pill" href="#level1-retail-banks-SME">Manage Business Processes</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                <!-- COLLAPSIBLE-BUTTON-2: Channels -->
+                <!--
+                <button class="btn btn-primary" data-toggle="collapse" data-target="#collap-button-2">Private Banks</button>
+                    <div id="collap-button-2" class="collapse">
+                        <ul class = "nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#level0-1">Information Technology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#level0-2">Information Technology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#level0-3">Information Technology</a>
+                            </li>
+                        </ul>
+                    </div> 
+                -->
+                <button class="btn level0" data-toggle="pill" href="#level0-channels">Channels</button>
+
+                <!-- COLLAPSIBLE-BUTTON-3: Governance -->
+                <!--
+                <button class="btn btn-primary" data-toggle="collapse" data-target="#collap-button-3">Corporate</button>
+                    <div id="collap-button-3" class="collapse">
+                        <ul class = "nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#level0-1">Information Technology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#level0-2">Information Technology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#level0-3">Information Technology</a>
+                            </li>
+                        </ul>
+                    </div>
+                --> 
+                <button class="btn level0" data-toggle="pill" href="#level0-governance">Governance</button>
+
+                <!-- COLLAPSIBLE-BUTTON-4: Product Development -->
+                <!--
+                <button class="btn btn-primary" data-toggle="collapse" data-target="#collap-button-4">Government</button>
+                    <div id="collap-button-4" class="collapse">
+                        <ul class = "nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#level0-1">Information Technology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#level0-2">Information Technology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#level0-3">Information Technology</a>
+                            </li>
+                        </ul>
+                    </div>
+                -->
+                <button class="btn level0" data-toggle="pill" href="#level0-product-development">Product Development</button>
+            </div>
+        </div>    
     </nav>
-
-    <!-- Tab panes -->
+    
+    <!-- content area -->
     <div class="centercolumn">
-      <div class="tab-content">
-        <div id="home" class="container tab-pane active"><br>
-          
-          <h3>HOME</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <div class="like-dislike">
-              <a class="like"><i class="fa fa-thumbs-up"></i></a>
-              <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
-              <a class="dislike"><i class="fa fa-thumbs-down"></i></a> 
-              <input class="qty-dislike" name="qty-dislike" readonly="readonly" type="text" value="0" /> 
-            <button type="button" class="comment-button" data-toggle="modal" data-target="#commentModal"><i class="fa fa-comment" aria-hidden="true"></i></button>
-            </div>
-        </div>
-        <div id="menu1" class="container tab-pane fade"><br>
-          <h3>Branch Banking</h3>
-          <table id="policy-table-1">
-            <tr>
-              <th>Policy Title</th>
-              <th>Date Modified</th>
-            </tr>
-            <tr>
-              <td>
-                <a class="nav-link" data-toggle="pill" href="#branch-banking-1">
-                Deposit account opening
-                </a>
-              </td>
-              <td>September 3, 2020</td>
-            </tr>
-            <tr>
-              <td>
-                <a class="nav-link" data-toggle="pill" href="#branch-banking-2">
-                Branch opening and closing
-                </a>
-              </td>
-              <td>September 3, 2020</td>
-            </tr>
-            <tr>
-              <td>
-                <a class="nav-link" data-toggle="pill" href="#branch-banking-3">Vault Management
-                </a>
-              </td>
-              <td>September 3, 2020</td>
-            </tr>
-            <tr>
-              <td>
-                <a class="nav-link" data-toggle="pill" href="#branch-banking-4">Cashier
-                </a>
-              </td>
-              <td>September 3, 2020</td>
-            </tr>
-            <tr>
-              <td>
-                <a class="nav-link" data-toggle="pill" href="#branch-banking-5">Products other than deposits
-                </a>
-              </td>
-              <td>September 3, 2020</td>
-            </tr>
+        <div class="tab-content">
+            <!-- Level 0: Retail Banks Content -->
+                <!-- Level 1: Retail Banks - SME-->
+                <div id="level1-retail-banks-SME" class="container tab-pane">
+                    <h2>SME</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-          </table>
+                    <div class="container">
+                        <div id="accordion">
+                          
+                          <div class="card">
+                            <div class="card-header">
+                              <a class="card-link" data-toggle="collapse" href="#manage-deposit-account">Manage Deposit Account</a>
+                            </div>
+                            <div id="manage-deposit-account" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                <table id = "sme-table">
+                                    <tr>
+                                        <th style="width: 75%">Policy Name</th>
+                                        <th>Date Issued</th>    
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a class="nav-link" data-toggle="pill" href="#for-all-products">For all products</a>
+                                        </td>
+                                        <td>September 21, 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a class="nav-link" data-toggle="pill" href="#for-current-account">For current account</a>
+                                        </td>
+                                        <td>September 21, 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a class="nav-link" data-toggle="pill" href="#for-savings-account">For savings account</a>
+                                        </td>
+                                        <td>September 21, 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a class="nav-link" data-toggle="pill" href="#for-term-deposits">For term deposits</a>
+                                        </td>
+                                        <td>September 21, 2020</td>
+                                    </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="card">
+                            <div class="card-header">
+                              <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">Manage Loans</a>
+                            </div>
+                            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="card">
+                            <div class="card-header">
+                              <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">Manage Cards</a>
+                            </div>
+                            <div id="collapseThree" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                              </div>
+                            </div>
+                          </div>
 
-        </div>
-        <div id="menu2" class="container tab-pane fade"><br>
-          <h3>Institutional Banking</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-          <div class="like-dislike">
-              <a class="like"><i class="fa fa-thumbs-up"></i></a>
-              <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
-              <a class="dislike"><i class="fa fa-thumbs-down"></i></a> 
-              <input class="qty-dislike" name="qty-dislike" readonly="readonly" type="text" value="0" /> 
-            <button type="button" class="comment-button" data-toggle="modal" data-target="#commentModal"><i class="fa fa-comment" aria-hidden="true"></i></button>
-            </div>
-        </div>
-        <div id="menu3" class="container tab-pane fade"><br>
-          <h3>Central Operations</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-          <div class="like-dislike">
-              <a class="like"><i class="fa fa-thumbs-up"></i></a>
-              <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
-              <a class="dislike"><i class="fa fa-thumbs-down"></i></a> 
-              <input class="qty-dislike" name="qty-dislike" readonly="readonly" type="text" value="0" /> 
-            <button type="button" class="comment-button" data-toggle="modal" data-target="#commentModal"><i class="fa fa-comment" aria-hidden="true"></i></button>
-            </div>
-        </div>
-        <div id="menu4" class="container tab-pane fade"><br>
-          <h3>Information Technology</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-          <div class="like-dislike">
-              <a class="like"><i class="fa fa-thumbs-up"></i></a>
-              <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
-              <a class="dislike"><i class="fa fa-thumbs-down"></i></a> 
-              <input class="qty-dislike" name="qty-dislike" readonly="readonly" type="text" value="0" /> 
-            <button type="button" class="comment-button" data-toggle="modal" data-target="#commentModal"><i class="fa fa-comment" aria-hidden="true"></i></button>
-            </div>    
-        </div>
-        <div id="menu5" class="container tab-pane fade"><br>
-          <h3>Human Resources</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-          <div class="like-dislike">
-              <a class="like"><i class="fa fa-thumbs-up"></i></a>
-              <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
-              <a class="dislike"><i class="fa fa-thumbs-down"></i></a> 
-              <input class="qty-dislike" name="qty-dislike" readonly="readonly" type="text" value="0" /> 
-            <button type="button" class="comment-button" data-toggle="modal" data-target="#commentModal"><i class="fa fa-comment" aria-hidden="true"></i></button>
-            </div>
-        </div>
-        <div id="menu6" class="container tab-pane fade"><br>
-          <h3>Marketing</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-          <div class="like-dislike">
-              <a class="like"><i class="fa fa-thumbs-up"></i></a>
-              <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
-              <a class="dislike"><i class="fa fa-thumbs-down"></i></a> 
-              <input class="qty-dislike" name="qty-dislike" readonly="readonly" type="text" value="0" /> 
-            <button type="button" class="comment-button" data-toggle="modal" data-target="#commentModal"><i class="fa fa-comment" aria-hidden="true"></i></button>
-            </div>
-        </div>
-        <div id="menu7" class="container tab-pane fade"><br>
-          <h3>Corporate Planning</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-          <div class="like-dislike">
-              <a class="like"><i class="fa fa-thumbs-up"></i></a>
-              <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
-              <a class="dislike"><i class="fa fa-thumbs-down"></i></a> 
-              <input class="qty-dislike" name="qty-dislike" readonly="readonly" type="text" value="0" /> 
-            <button type="button" class="comment-button" data-toggle="modal" data-target="#commentModal"><i class="fa fa-comment" aria-hidden="true"></i></button>
-            </div>
-        </div>
-        <div id="menu8" class="container tab-pane fade"><br>
-          <h3>Deposit Account Opening</h3>
-          <h4>Customer Principles</h4>
-          <ul>
-            <li>BDO will find ways for the customer.</li>
-            <li>BDO will be the number trusted bank of the customers.</li>
-            <li>BDO will transact with customers only in accordance with the law</li>
-          <br>
-          <h4>Policy on Deposit Account Opening</h4>
-          <br>
-          <h5>1.1 Scope</h5> 
-          <p>This policy covers all deposit account opening in branches, including but not limited to – </p>
-          <ul>
-            <li>Checking account</li>
-            <li>Savings account</li>
-            <li>Time deposits account</li>
-          </ul>
-          <br>        
-          <p>This policy does not cover deposit account opened through BDO web apps and mobile apps</p> 
+                          <div class="card">
+                            <div class="card-header">
+                              <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">Manage Forex</a>
+                            </div>
+                            <div id="collapseThree" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="card">
+                            <div class="card-header">
+                              <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">Manage Investments</a>
+                            </div>
+                            <div id="collapseThree" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                              </div>
+                            </div>
+                          </div>
+                        
+                          <div class="card">
+                            <div class="card-header">
+                              <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">Manage Bancassurance</a>
+                            </div>
+                            <div id="collapseThree" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                              </div>
+                            </div>
+                          </div>
 
-          </ul> 
-          <div class="container">
-            <div id="accordion">
-              <div class="card">
-                <div class="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                    1. Pre-Sales
-                  </a>
-                </div>
-                <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                  <div class="card-body">
-                    <ul>
-                      <li>Customer outcome </li>
-                      <li>Customer guidance</li>
-                      <li>Operation guidelines</li>
-                      <li>Prohibited actions </li>
-                      <li>Approving authorities (branch view)</li>
-                      <li>Relevant BDO units and contacts </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-                  2. Application
-                </a>
-                </div>
-                <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                  <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
-                    3. Processing
-                  </a>
-                </div>
-                <div id="collapseThree" class="collapse" data-parent="#accordion">
-                  <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
-                    4. Opening
-                  </a>
-                </div>
-                <div id="collapseFour" class="collapse" data-parent="#accordion">
-                  <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">
-                    5. Monitoring
-                  </a>
-                </div>
-                <div id="collapseFive" class="collapse" data-parent="#accordion">
-                  <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="container">
-            <a class="like"><i class="fa fa-thumbs-up"></i></a>
-            <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
-            <a class="dislike"><i class="fa fa-thumbs-down"></i></i></a> 
-            <input class="qty-dislike" name="qty-dislike" readonly="readonly" type="text" value="0" />
-      <br>
-      <br>
-      <textarea class="comment">Type your comment here.</textarea>
-      <br>
+                          <div class="card">
+                            <div class="card-header">
+                              <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">Manage Safety Box Facilities</a>
+                            </div>
+                            <div id="collapseThree" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                              </div>
+                            </div>
+                          </div>
 
-      <button>Send</button>
-         
-        </div>
-
-        </div>
-        <div id="menu9" class="container tab-pane fade"><br>
-          <h3>Consumer Lending</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-          <div class="like-dislike">
-              <a class="like"><i class="fa fa-thumbs-up"></i></a>
-              <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
-              <a class="dislike"><i class="fa fa-thumbs-down"></i></a> 
-              <input class="qty-dislike" name="qty-dislike" readonly="readonly" type="text" value="0" /> 
-            <button type="button" class="comment-button" data-toggle="modal" data-target="#commentModal"><i class="fa fa-comment" aria-hidden="true"></i></button>
-            </div>
-        </div>
-        <div id="menu10" class="container tab-pane fade"><br>
-          <h3>Payments and Transaction Banking</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-          <div class="like-dislike">
-              <a class="like"><i class="fa fa-thumbs-up"></i></a>
-              <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
-              <a class="dislike"><i class="fa fa-thumbs-down"></i></a> 
-              <input class="qty-dislike" name="qty-dislike" readonly="readonly" type="text" value="0" /> 
-            <button type="button" class="comment-button" data-toggle="modal" data-target="#commentModal"><i class="fa fa-comment" aria-hidden="true"></i></button>
-            </div>
-        </div>
-        <div id="menu11" class="container tab-pane fade"><br>
-          <h3>Treasury and Asset Management</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-          <div class="like-dislike">
-              <a class="like"><i class="fa fa-thumbs-up"></i></a>
-              <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
-              <a class="dislike"><i class="fa fa-thumbs-down"></i></a> 
-              <input class="qty-dislike" name="qty-dislike" readonly="readonly" type="text" value="0" /> 
-            <button type="button" class="comment-button" data-toggle="modal" data-target="#commentModal"><i class="fa fa-comment" aria-hidden="true"></i></button>
-            </div>
-        </div>
-        <div id="branch-banking-1" class="container tab-pane fade"><br>
-          <h3>Deposit Account Opening</h3>
-          <h4>Customer Principles</h4>
-          <ul>
-            <li>BDO will find ways for the customer.</li>
-            <li>BDO will be the number trusted bank of the customers.</li>
-            <li>BDO will transact with customers only in accordance with the law</li>
-          <br>
-          <h4>Policy on Deposit Account Opening</h4>
-          <br>
-          <!-- Like and Dislike -->
-          <div class="container">
-            
-          </div>
-          <h5>1.1 Scope</h5> 
-          <p>This policy covers all deposit account opening in branches, including but not limited to – </p>
-          <ul>
-            <li>Checking account</li>
-            <li>Savings account</li>
-            <li>Time deposits account</li>
-          </ul>
-          <br>        
-          <p>This policy does not cover deposit account opened through BDO web apps and mobile apps</p> 
-
-          </ul> 
-
-          <div class="like-dislike">
-              <a class="like"><i class="fa fa-thumbs-up"></i></a>
-              <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
-              <a class="dislike"><i class="fa fa-thumbs-down"></i></a> 
-              <input class="qty-dislike" name="qty-dislike" readonly="readonly" type="text" value="0" /> 
-            <button type="button" class="comment-button" data-toggle="modal" data-target="#commentModal"><i class="fa fa-comment" aria-hidden="true"></i></button>
-            </div>
-
-          <div class="container">
-            <div id="accordion" style="margin-bottom: 20px;">
-              <div class="card">
-                <div class="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                    1.2 Pre-Sales
-                  </a>
-                </div>
-                <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                  <div class="card-body">
-                    <h5>1.2 Pre-sales</h5>
-                    <ul>
-                      <li>Customer outcome </li>
-                      <li>Customer guidance</li>
-                      <li>Operation guidelines</li>
-                      <li>Prohibited actions </li>
-                      <li>Approving authorities (branch view)</li>
-                      <li>Relevant BDO units and contacts </li>
-                    </ul>
-                    <div class="like-dislike">
-                      <a class="like"><i class="fa fa-thumbs-up"></i></a>
-                      <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
-                      <a class="dislike"><i class="fa fa-thumbs-down"></i></a> 
-                      <input class="qty-dislike" name="qty-dislike" readonly="readonly" type="text" value="0" /> 
-                    <button type="button" class="comment-button" data-toggle="modal" data-target="#commentModal"><i class="fa fa-comment" aria-hidden="true"></i></button>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-                  1.3. Application
-                </a>
-                </div>
-                <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                  <div class="card-body">
-                    <h5>1.3. Application</h5>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-                    <div class="like-dislike">
-                      <a class="like"><i class="fa fa-thumbs-up"></i></a>
-                      <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
-                      <a class="dislike"><i class="fa fa-thumbs-down"></i></a> 
-                      <input class="qty-dislike" name="qty-dislike" readonly="readonly" type="text" value="0" /> 
-                    <button type="button" class="comment-button" data-toggle="modal" data-target="#commentModal"><i class="fa fa-comment" aria-hidden="true"></i></button>
-                    </div>
-                  </div>
+                <!-- Level 2: SME - Manage Deposit Account -->
+                <!-- Level 2: SME - Manage Loans -->
+                <!-- Level 2: SME - Manage Cards -->
+                <!-- Level 2: SME - Manage Forex -->
+                <!-- Level 2: SME - Manage Investments -->
+                <!-- Level 2: SME - Manage Bancassurance -->
+                <!-- Level 2: SME - Manage Safety Box Facilities -->
+                
+                <!-- Level 1: Retail Banks - Individual-->
+                <div id="level1-retail-banks-individual" class="container tab-pane">
+                    <h2>Individual</h2>  
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
-                    1.4 Processing
-                  </a>
-                </div>
-                <div id="collapseThree" class="collapse" data-parent="#accordion">
-                  <div class="card-body">
-                    <h5>1.4 Processing</h5>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-                    <div class="like-dislike">
-                      <a class="like"><i class="fa fa-thumbs-up"></i></a>
-                      <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
-                      <a class="dislike"><i class="fa fa-thumbs-down"></i></a> 
-                      <input class="qty-dislike" name="qty-dislike" readonly="readonly" type="text" value="0" /> 
-                    <button type="button" class="comment-button" data-toggle="modal" data-target="#commentModal"><i class="fa fa-comment" aria-hidden="true"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
-                    1.5 Opening
-                  </a>
-                </div>
-                <div id="collapseFour" class="collapse" data-parent="#accordion">
-                  <div class="card-body">
-                    <h5>1.5 Opening</h5>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-                    <div class="like-dislike">
-                      <a class="like"><i class="fa fa-thumbs-up"></i></a>
-                      <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
-                      <a class="dislike"><i class="fa fa-thumbs-down"></i></a> 
-                      <input class="qty-dislike" name="qty-dislike" readonly="readonly" type="text" value="0" /> 
-                    <button type="button" class="comment-button" data-toggle="modal" data-target="#commentModal"><i class="fa fa-comment" aria-hidden="true"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">
-                    1.6 Monitoring
-                  </a>
-                </div>
-                <div id="collapseFive" class="collapse" data-parent="#accordion">
-                  <div class="card-body">
-                    <h5>1.6 Monitoring</h5>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-                    <div class="like-dislike">
-              <a class="like"><i class="fa fa-thumbs-up"></i></a>
-              <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
-              <a class="dislike"><i class="fa fa-thumbs-down"></i></a> 
-              <input class="qty-dislike" name="qty-dislike" readonly="readonly" type="text" value="0" /> 
-            <button type="button" class="comment-button" data-toggle="modal" data-target="#commentModal"><i class="fa fa-comment" aria-hidden="true"></i></button>
+            <!-- Level 0: Private Banks Content -->
+            <div id="level0-private-banks" class="container tab-pane">
+                <h2>Private Banks</h2>  
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
-                  </div>
-                </div>
-              </div>
+
+            <!-- Level 0: Corporate Content -->
+            <div id="level0-corporate" class="container tab-pane">
+                <h2>Corporate</h2>  
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
-          </div>
-          <!-- BSP Circulars -->
-          <div>
-            <h5>Related Policies</h5>
-            <table id="policy-table-2">
-              <tr>
-                <td><a class="nav-link" data-toggle="modal" href="#modal-policy-1">150 SOCIAL MEDIA RISK MANAGEMENT
-                </a></td>
-                <td>September 3, 2020</td>
-              </tr>
-              <tr>
-                <td><a class="nav-link" data-toggle="modal" href="#modal-policy-2">Policy 1
-                </a></td>
-                <td>September 3, 2020</td>
-              </tr>
-              <tr>
-                <td><a class="nav-link" data-toggle="modal" href="#modal-policy-3">Policy 1
-                </a></td>
-                <td>September 3, 2020</td>
-              </tr>
-              <tr>
-                <td><a class="nav-link" data-toggle="modal" href="#modal-policy-4">Policy 1
-                </a></td>
-                <td>September 3, 2020</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div id="branch-banking-2" class="container tab-pane fade"><br>
-          <h3>Branch opening and closing</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-        </div>
-        <div id="branch-banking-3" class="container tab-pane fade"><br>
-          <h3>Vault management</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-        </div>
-        <div id="branch-banking-4" class="container tab-pane fade"><br>
-          <h3>Cashier</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-        </div>
-        <div id="branch-banking-5" class="container tab-pane fade"><br>
-          <h3>Products other than deposits</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-        </div>
+
+            <!-- Level 0: Government Content -->
+            <div id="level0-government" class="container tab-pane">
+                <h2>Government</h2>  
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
+
+            <!-- Level 0: Support Services Content -->
+                <!-- Level 1: Retail Banks - SME-->
+                <div id="level1-retail-banks-SME" class="container tab-pane">
+                    <h2>SME</h2>  
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                
+                <!-- Level 1: Retail Banks - Individual-->
+                <div id="level1-retail-banks-individual" class="container tab-pane">
+                    <h2>Individual</h2>  
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+
+            <!-- Level 0: Channels Content -->
+            <div id="level0-channels" class="container tab-pane">
+                <h2>Channels</h2>  
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
+            <!-- Level 0: Governance Content -->
+            <div id="level0-governance" class="container tab-pane">
+                <h2>Governance</h2>  
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
+            <!-- Level 0: Product Development Content -->
+            <div id="level0-product-development" class="container tab-pane">
+                <h2>Product Development</h2>  
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
         </div>
     </div>
-  </div>
-
-  <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="policy-name" class="col-form-label">Policy Name:</label>
-            <input type="text" class="form-control" id="policy-name">
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Comment</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Policy 1-->
-<div class="modal fade" id="modal-policy-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">150 SOCIAL MEDIA RISK MANAGEMENT</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>
-          <strong>Policy Statement</strong>
-           BSFIs shall comply with the foregoing standards on social media risk management within a period of six (6) months from 04 April 2017. In this regard, a BSFI should be able to show, upon request of the Bangko Sentral, its plan of actions with specific timelines, as well as the status of initiatives being undertaken to fully comply with the provisions of this Section.
-        </p>
-        <p>
-          Social media, a low-cost solution capable of disseminating real-time information via the internet, presents vast opportunities for growth, customer engagement and business benefits as usage, customer reach and adoption scale up and become widespread and ubiquitous. Considering these potential benefits alongside exponential growth in the number of social media users and its massive reach, BSFIs have started to leverage on social media platform/s to promote their business and improve customer interaction experience to help drive business objectives/strategies.
-        </p>
-      </div>
-      <div class="modal-footer">
-
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
 </body>
 </html>

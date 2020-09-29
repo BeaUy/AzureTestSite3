@@ -1,26 +1,53 @@
-@media screen and (min-width: 801px)
-    .site-search, .leftcolumn, .social {
-    display: block!important;
-    border-right-style: dotted;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+/* screen division */
+#sideb {
+    position: relative;
 }
 
-@media screen and (max-width: 1280px)
-.leftcolumn {
-    width: 230px;
-    border-right-style: dotted;
+.rectangle {
+    width: 240px;
+    height: 3000px;
+    background-color: #0b2972;
+    z-index: -100;
+    position: absolute;
+    border-right-style: inset; 
 }
 
 .leftcolumn {
     width: 240px;
     float: left;
     font-size: 16px;
-    color: #4f4f4f;
+    color: #fff;
     border-right-style: inset; 
+    background-color: #0b2972;
+    z-index: 100;
+    position: relative;
 }
 
-@media screen and (max-width: 1280px)
-.centercolumn {
-    width: 820px;
+.level0 {
+    color: #fff;
+    text-align: left;
+    padding-left: 35px;
+}
+
+.level0:active, .level0:focus, .level0:hover {
+    color:  #0b2972;
+    background-color: #ffb20c;
+    font-weight: bold;
+}
+
+#sme, #indiv, #ss1, #ss2, #ss3, #ss4, #ss5, #ss6, #ss7, #ss8{
+    padding-left: 55px;
+    color: #fff;
+    text-align: left;
+}
+
+#sme:active, #sme:focus, #sme:hover {
+    color:  #0b2972;
+    background-color: #ffb20c;
+    font-weight: bold;
+    padding-left: 55px;
 }
 
 .centercolumn {
@@ -28,124 +55,37 @@
     float: left;
 }
 
-div {
-    display: block;
+/* sme table */
+#sme-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+#sme-table td, #sme-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
 }
 
-@media screen and (max-width: 1280px)
-.wrapper {
-    width: 1260px;
+#sme-table tr:nth-child(even){background-color: #f2f2f2;}
+  
+#sme-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0b2972;
+    color: white;
 }
 
-.wrapper {
-    width: 1300px;
-    padding: 0 15px;
-    margin: 0 auto;
+h4 {
+   font-size: large;
+   margin-left: 15px; 
+   color: #ffb20c;
 }
 
-.nav-pills .nav-link.active, .nav-pills .nav-link.active:hover,.nav-pills .nav-link.active:focus{
-    background-color: #ffb20c;
-    color:white;
-    font-weight:550;
+h2 {
+   margin-top: 50px;
+   margin-bottom: 30px;
+   font-family: Roboto, sans-serif;
 }
 
-.nav-link:hover {
-    background-color: #f2deb1;
-}
 
-.nav-link {
-    color: #0b2972;
-}
-
-#policy-table-1 {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#policy-table-1 td, #policy-table-1 th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#policy-table-1 tr:nth-child(even){background-color: #f2f2f2;}
-
-#policy-table-1 th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #0b2972;
-  color: white;
-}
-
-.like, .dislike, .comment-button {    
-    display: inline-block;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    font-weight: normal;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    background: transparent;
-    border: solid transparent;
-    white-space: nowrap;
-    padding: 6px 6px;
-    font-size: 14px;
-    line-height: 1.428571429;
-    border-radius: 4px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #0b2972;
-
-}
-
-.qty-like, .qty-dislike {    
-    display: inline-block;
-    width: 30px;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    font-weight: normal;
-    vertical-align: middle;
-    cursor: pointer;
-    background: transparent;
-    border: solid transparent;
-    white-space: nowrap;
-    padding: 0px 0px;
-    font-size: 14px;
-    line-height: 1.428571429;
-    border-radius: 0px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #0b2972;
-
-}
-
-.like-dislike {
-    text-align: right;
-}
-
-.comment {
-        width: 40%;
-        height: 100px;
-        padding: 10px;
-        background-color: #d0e2bc;
-}
-
-#policy-table-2 {
-  border-collapse: collapse;
-  width: 100%;
-  table-layout: auto; 
-  width: 100%;
-}
-
-#policy-table-2 td, #policy-table-2 th {
-  border: 1px solid #ddd;
-  padding: 2px;
-}
-
-#policy-table-2 tr:nth-child(even){background-color: #f2f2f2;}
-
-#policy-table-2 th {
-  padding-top: 2px;
-  padding-bottom: 2px;
-  text-align: left;
-  background-color: #0b2972;
-  color: white;
-}
