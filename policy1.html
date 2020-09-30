@@ -11,6 +11,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Like and dislike script -->
   <script type="text/javascript">
     $(function(){
     $(".like").click(function(){
@@ -23,7 +24,7 @@
         input.val(parseFloat(input.val()) + 1);
     });
   });
-</script>
+  </script>
 
 <!-- modal script -->
 <script type="text/javascript">
@@ -38,18 +39,76 @@
 })
 </script>
 
+<!-- retail banking dropdown script -->
+<script>
+  document.getElementById("retail-banking").onclick = function() {showRetailBanking()};
+
+  function showRetailBanking () {
+    document.getElementById("level0-retail-banking").classList.toggle("show");
+  }
+</script>
+
+<!-- history back arrow -->
+<script>
+  document.getElementById("backback").onclick = function() {goBack()};
+
+  function goBack () {
+    history.go(-1);
+  }
+</script>
+
+<!-- for all script -->
+<script>
+  document.getElementById("forall").onclick = function() {forAll()};
+
+  function forAll() {
+    document.getElementById("for-all-products").classList.toggle("show");
+  }
+</script>
+
+<!-- related topics script -->
+<script>
+  document.getElementById("fraud").onclick = function() {fraud()};
+  document.getElementById("legal-affairs").onclick = function() {legalaffairs()};
+  document.getElementById("int-ext-audit").onclick = function() {intextaudit()};
+  document.getElementById("ext-rel").onclick = function() {extrel()};
+  document.getElementById("cross-sell").onclick = function() {crosssell()};
+  document.getElementById("cust-reg-complain").onclick = function() {custregcomplain()};
+
+  function fraud() {
+    document.getElementById("fraud").classList.toggle("show");
+  }
+  function legalaffairs() {
+    document.getElementById("legal-affairs").classList.toggle("show");
+  }
+  function intextaudit() {
+    document.getElementById("int-ext-audit").classList.toggle("show");
+  }
+  function extrel() {
+    document.getElementById("ext-rel").classList.toggle("show");
+  }
+  function crosssell() {
+    document.getElementById("cross-sell").classList.toggle("show");
+  }
+  function custregcomplain() {
+    document.getElementById("cust-reg-complain").classList.toggle("show");
+  }
+</script>
+
+
 </head>
 <body>
     <!-- sidebar menu -->
     <nav id="sideb">
         <div class="rectangle"></div>
         <div class="leftcolumn">
+            <!-- <button class="btn back-arrow" id="backback"><i class="fa fa-arrow-left" aria-hidden="true"></i></button> -->
             <img src="bdo-logo.jpg" style="width: 240px; height: auto; border-right-style: inset; padding: 20px;"/>
             <!-- Costumer Types Menu -->
             <h4>Costumer Types</h4>
             <div class="nav flex-column">
                 <!-- COLLAPSIBLE-BUTTON-1: Retail Banking -->
-                <button class="btn level0" data-toggle="collapse" data-target="#level0-retail-banking">Retail Banking</button> 
+                <button id = "retail-banking" class="btn level0" data-toggle="collapse" data-target="#level0-retail-banking">Retail Banking</button> 
                     <div id="level0-retail-banking" class="collapse">
                         <ul class = "nav nav-pills flex-column">
                             <li class="nav-item">
@@ -220,17 +279,54 @@
             <!-- Home Pane -->
             <div class="container tab-pane active">
                 <h2>Home</h2>  
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel bibendum dui, a scelerisque massa. Nullam iaculis in massa nec dapibus. 
-                Quisque quis felis nulla. Aenean efficitur mi nec vulputate volutpat. Morbi elementum, leo ac finibus porta, nunc lacus feugiat massa, et tincidunt 
-                augue erat a eros. Sed laoreet mattis libero, ac tempus risus. Proin eleifend leo neque, sit amet volutpat nisi commodo vel. Nam dapibus odio et 
-                magna rutrum tincidunt at eget ligula. Nam neque urna, porta vel ornare hendrerit, fermentum quis lorem. Sed commodo tincidunt eros eu sollicitudin. 
-                Fusce id sem vel diam ullamcorper suscipit et quis felis.</p>
+                <h3 style="margin-top: 20px; margin-left: 15px;">Policy Updates</h3>
+                <table id = "policy-updates-table">
+                  <tr>
+                    <th style="width: 75%">Policy Name</th>
+                    <th>Date Issued</th>    
+                  </tr>
+                  <tr>
+                      <td>
+                          <a class="nav-link" data-toggle="pill" href="#">Produce customer activity reports</a>
+                      </td>
+                      <td>September 21, 2020</td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <a class="nav-link" data-toggle="pill" href="#">Manage SLAs</a>
+                      </td>
+                      <td>September 21, 2020</td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <a class="nav-link" data-toggle="pill" href="#">Handle customer requests/inquiries</a>
+                      </td>
+                      <td>September 21, 2020</td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <a class="nav-link" data-toggle="pill" href="#">Manage escalations</a>
+                      </td>
+                      <td>September 21, 2020</td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <a class="nav-link" data-toggle="pill" href="#">Manage exceptions</a>
+                    </td>
+                    <td>September 21, 2020</td>
+                </tr>
+                </table>
+
             </div>
             <!-- Level 0: Retail Banks Content -->
                 <!-- Level 1: Retail Banks - SME-->
                 <div id="level1-retail-banks-SME" class="container tab-pane">
                     <h2>SME</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>SMEs are small and medium business
+                      enterprises with annual revenue of less
+                      than PHP 100 million. These businesses
+                      can be in the form of sole proprietorship,
+                      partnership or corporation.</p>
 
                     <div class="container">
                         <div id="accordion">
@@ -248,7 +344,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <a class="nav-link" data-toggle="pill" href="#for-all-products">For all products</a>
+                                            <a id = "forall" class="nav-link" data-toggle="pill" href="#for-all-products">For all products</a>
                                         </td>
                                         <td>September 21, 2020</td>
                                     </tr>
@@ -348,12 +444,7 @@
                     <!-- Level 2: For all products -->
                     <div id="for-all-products" class="container tab-pane"> 
 
-                        <h2>For All Products</h2>  
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
+                        <h2>For All Deposit Products</h2>  
 
                         <table id = "all-products-table">
                             <tr>
@@ -362,25 +453,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a class="nav-link" data-toggle="pill" href="#">Customer Journey</a>
-                                </td>
-                                <td>September 21, 2020</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a class="nav-link" data-toggle="pill" href="#">Process View</a>
-                                </td>
-                                <td>September 21, 2020</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a class="nav-link" data-toggle="pill" href="#marketing">Marketing</a>
-                                </td>
-                                <td>September 21, 2020</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a class="nav-link" data-toggle="pill" href="#">Account Opening</a>
+                                    <a class="nav-link" data-toggle="pill" href="#marketing">Marketing & Account Opening</a>
                                 </td>
                                 <td>September 21, 2020</td>
                             </tr>
@@ -404,7 +477,14 @@
                             </tr>
                         </table>
 
-                        <h5 style="margin-top: 30px;"> <a  class="nav-link" data-toggle="pill" href="#related-topics">Related Topics</a>  </h5> 
+                        <!-- <h5 style="margin-top: 30px;"> <a  class="nav-link" data-toggle="pill" href="#related-topics">Related Topics</a>  </h5> -->
+                        <h5 style="margin-top: 30px;">Related Topics</h5>
+                        <a class="btn tag-pill nav-link" data-toggle="pill" href="#fraud">Fraud/AML</a>
+                        <a class="btn tag-pill nav-link" data-toggle="pill" href="#legal-affairs">Legal affairs</a>
+                        <a class="btn tag-pill nav-link" data-toggle="pill" href="#int-ext-audit">Internal and external audit</a>
+                        <a class="btn tag-pill nav-link" data-toggle="pill" href="#ext-rel">External relationship</a>
+                        <a class="btn tag-pill nav-link" data-toggle="pill" href="#">Cross sell</a>
+                        <a class="btn tag-pill nav-link" data-toggle="pill" href="#">Customer request and complaints</a>
                     </div>
 
                     <!-- Related Topics -->
@@ -599,6 +679,498 @@
                             </div>
                         </div>
                     </div>
+                
+                    <!-- Related Topics -->
+                    
+                    <!-- Fraud -->
+                    <div id = "fraud" class="container tab-pane"> 
+                      <h3 style="margin-top: 30px;">Fraud</h3>
+                      
+                      <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#fraud-one">Monitor & Report Compliance Risk</a>
+                        </li>
+                        <li class="nav-item">
+                          <a id="choosable" class="nav-link active" href="#fraud-two">Manage Fraud/AML</a>
+                        </li>
+                      </ul>
+
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="fraud-one" role="tabpanel" aria-labelledby="home-tab">
+                          <div class="row lisgroup">
+                            <div class="col-4">
+                              <div class="list-group" id="list-tab" role="tablist">
+                                <a class="list-group-item list-group-item-action disabled id="list-home-list" data-toggle="list" href="#" role="tab" aria-controls="home">Establish/Maintain business rules to detect fraud or suspicious activities</a>
+                                <a class="list-group-item list-group-item-action choosable active" id="list-profile-list" data-toggle="list" href="#fraud1" role="tab" aria-controls="profile">Detect fraud or suspicious activities</a>
+                                <a class="list-group-item list-group-item-action disabled" id="list-messages-list" data-toggle="list" href="#" role="tab" aria-controls="messages">Investigate and report fraud incident</a>
+                                <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Investigate application fraud enquiry</a>
+                                <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Investigate fraud claims</a>
+                                <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Review and investigate reconciliation</a>
+                                <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Conduct systemic fraud investigation and monitoring</a>
+                                <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Monitor channel fraud</a>
+                                <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Monitor payments fraud</a>
+                                <a class="list-group-item list-group-item-action choosable" id="list-settings-list" data-toggle="list" href="#fraud2" role="tab" aria-controls="settings">Manage large deposits</a>
+                                <a class="list-group-item list-group-item-action choosable" id="list-settings-list" data-toggle="list" href="#fraud3" role="tab" aria-controls="settings">Suspend/resume account</a>
+                                <a class="list-group-item list-group-item-action choosable" id="list-settings-list" data-toggle="list" href="#fraud4" role="tab" aria-controls="settings">Engage with regulatory and legislative bodies</a>
+                              </div>
+                            </div>
+                            <div class="col-8">
+                              <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="fraud1" role="tabpanel" aria-labelledby="list-home-list">
+                                  <h3>Detect fraud or suspicious activities</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                                <div class="tab-pane fade" id="fraud2" role="tabpanel" aria-labelledby="list-profile-list">
+                                  <h3>Manage large deposits</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                                <div class="tab-pane fade" id="fraud3" role="tabpanel" aria-labelledby="list-messages-list">
+                                  <h3>Suspend/resume account</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                                <div class="tab-pane fade" id="fraud4" role="tabpanel" aria-labelledby="list-settings-list">
+                                  <h3>Engage with regulatory and legislative bodies</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="tab-pane fade" id="fraud-two" role="tabpanel" aria-labelledby="profile-tab">
+                          Fraud Two
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <!-- Legal Affairs -->
+                    <div id = "legal-affairs" class="container tab-pane">
+                      <h3 style="margin-top: 30px;">Legal Affairs</h3>
+                      
+                      <ul class="nav nav-tabs">
+                        
+                        <li class="nav-item">
+                          <a id="choosable" class="nav-link active" href="#legaf-one" data-toggle="tab" role="tab" aria-controls="legaf-one" aria-selected="true">Provide Legal Support And Advise</a>
+                        </li>
+                        <li class="nav-item">
+                          <a id="choosable" class="nav-link" href="#legaf-two" data-toggle="tab" role="tab" aria-controls="legaf-two" aria-selected="false">Manage Legal Documents And Contracts</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#">Collections And Recoveries Litigation</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#">Manage Credit Lending Contracts</a>
+                        </li>
+                      </ul>
+
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="legaf-one" role="tabpanel" aria-labelledby="home-tab">
+                          <div class="row lisgroup">
+                            <div class="col-4">
+                              <div class="list-group" id="list-tab" role="tablist">
+                                
+                                <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Develop legal policies and procedures</a>
+                                <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Prepare and manage legal budget</a>
+                                <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Engage and manage external counsel</a>
+                                <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Provide legal representation</a>
+                                
+                                <a class="list-group-item list-group-item-action choosable active" id="list-settings-list" data-toggle="list" href="#legaf1" role="tab" aria-controls="legaf1">Handle legal disputes</a>
+                                <a class="list-group-item list-group-item-action choosable" id="list-settings-list" data-toggle="list" href="#legaf2" role="tab" aria-controls="legaf2">Respond to legal enquiries</a>
+                                
+                                <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Monitor legislative changes and inform stakeholders</a>
+                                <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Draft laws and issue by-laws</a>
+                                <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Maintain subject matter expertise</a>
+                                <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Manage and protect intellectual property</a>
+                                
+                              </div>
+                            </div>
+                            <div class="col-8">
+                              <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="legaf1" role="tabpanel" aria-labelledby="list-home-list">
+                                  <h3>Handle legal disputes</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                                <div class="tab-pane fade" id="legaf2" role="tabpanel" aria-labelledby="list-profile-list">
+                                  <h3>Respond to legal enquiries</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                            <div class="tab-pane fade" id="legaf-two" role="tabpanel" aria-labelledby="profile-tab">
+                              <div class="row lisgroup">
+                                <div class="col-4">
+                                  <div class="list-group" id="list-tab" role="tablist">
+                                    
+                                    <a class="list-group-item list-group-item-action choosable active" id="list-profile-list" data-toggle="list" href="#legaf-two-two" role="tab" aria-controls="legaf-two-two">Define legal document management requirements</a>
+                                    <a class="list-group-item list-group-item-action disabled" id="list-messages-list" data-toggle="list" href="#" role="tab" aria-controls="messages">Define legal document management policies and procedures</a>
+                                    <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Draft and review contract/SLAs</a>
+                                    <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Store and protect physical legal documents</a>
+                                    <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Store and protect digital legal documents</a>
+                                    <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Manage contract renewal, termination, and close out</a>
+                                    
+                                  </div>
+                                </div>
+                                <div class="col-8">
+                                  <div class="tab-content" id="nav-tabContent">
+                                    <div class="tab-pane fade show active" id="legaf-two-two" role="tabpanel" aria-labelledby="list-home-list">
+                                      <h3>Define legal document management requirements</h3>
+                                      <p>(policy information here)</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          
+                        </div>
+                      </div>
+                    
+
+                    <!-- Internal and external audit -->
+                    <div id = "int-ext-audit" class="container tab-pane">
+                      <h3 style="margin-top: 30px;">Internal and External Audit</h3>
+                      
+                      <ul class="nav nav-tabs">
+                        
+                        <li class="nav-item">
+                          <a id="choosable" class="nav-link active" href="#int-ext">Manage Audit Protocols</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#">Perform Audit Reporting</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#">Manage Audit Risk Assessment And Planning</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#">Perform Audit Execution</a>
+                        </li>
+                      </ul>
+
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="int-ext" role="tabpanel" aria-labelledby="home-tab">
+                          <div class="row lisgroup">
+                            <div class="col-4">
+                              <div class="list-group" id="list-tab" role="tablist">
+                                
+                                <a class="list-group-item list-group-item-action choosable active" id="list-profile-list" data-toggle="list" href="#int-ext-1" role="tab" aria-controls="int-ext-1">Define roles and responsibilities for audit</a>
+                                <a class="list-group-item list-group-item-action disabled" id="list-messages-list" data-toggle="list" href="#" role="tab" aria-controls="messages">Develop audit processes</a>
+                                <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Establish audit tools</a>
+                                <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Develop stakeholder engagement plan</a>
+                                <a class="list-group-item list-group-item-action disabled" id="list-settings-list" data-toggle="list" href="#" role="tab" aria-controls="settings">Development and maintain audit manual</a>
+                                
+                              </div>
+                            </div>
+                            <div class="col-8">
+                              <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="int-ext-1" role="tabpanel" aria-labelledby="list-home-list">
+                                  <h3>Detect fraud or suspicious activities</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- External relationship -->
+                    <div id = "ext-rel" class="container tab-pane">
+                      <h3 style="margin-top: 30px;">External Relationships</h3>
+                      
+                      <ul class="nav nav-tabs">
+                        
+                        
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#">Manage And Foster Strategic Relationships</a>
+                        </li>
+                        <li class="nav-item">
+                          <a id="choosable" class="nav-link active" href="#extone">Manage Government And Industry Relationships</a>
+                        </li>
+                        <li class="nav-item">
+                          <a id="choosable" class="nav-link" href="#exttwo">Manage Media & Public Relationships</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#">Manage Investor Relationships</a>
+                        </li>
+                        
+                      </ul>
+
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="extone" role="tabpanel" aria-labelledby="home-tab">
+                          <div class="row lisgroup">
+                            <div class="col-4">
+                              <div class="list-group" id="list-tab" role="tablist">
+                                
+                                <a class="list-group-item list-group-item-action choosable active" id="list-profile-list" data-toggle="list" href="#ext11" role="tab" aria-controls="ext11">Plan, build and manage government relationships</a>
+                                <a class="list-group-item list-group-item-action choosable" id="list-profile-list" data-toggle="list" href="#ext12" role="tab" aria-controls="ext12">Manage relationships with quasi-government bodies</a>
+                                <a class="list-group-item list-group-item-action choosable" id="list-profile-list" data-toggle="list" href="#ext13" role="tab" aria-controls="ext13">Manage relationships with trade/industry groups</a>
+                                <a class="list-group-item list-group-item-action choosable" id="list-profile-list" data-toggle="list" href="#ext14" role="tab" aria-controls="ext14">Manage lobby activities</a>
+                                <a class="list-group-item list-group-item-action choosable" id="list-profile-list" data-toggle="list" href="#ext15" role="tab" aria-controls="ext15">Manage regulatory relationships</a>
+
+                              </div>
+                            </div>
+                            <div class="col-8">
+                              <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="ext11" role="tabpanel" aria-labelledby="list-home-list">
+                                  <h3>Plan, build and manage government relationships</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                                <div class="tab-pane fade" id="ext12" role="tabpanel" aria-labelledby="list-home-list">
+                                  <h3>Manage relationships with quasi-government bodies</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                                <div class="tab-pane fade" id="ext13" role="tabpanel" aria-labelledby="list-home-list">
+                                  <h3>Manage relationships with trade/industry groups</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                                <div class="tab-pane fade" id="ext14" role="tabpanel" aria-labelledby="list-home-list">
+                                  <h3>Manage lobby activities</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                                <div class="tab-pane fade" id="ext15" role="tabpanel" aria-labelledby="list-home-list">
+                                  <h3>Manage regulatory relationships</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade" id="exttwo" role="tabpanel" aria-labelledby="home-tab">
+                          <div class="row lisgroup">
+                            <div class="col-4">
+                              <div class="list-group" id="list-tab" role="tablist">
+                                
+                                <a class="list-group-item list-group-item-action choosable active" id="list-profile-list" data-toggle="list" href="#ext21" role="tab" aria-controls="ext21">Develop media and PR policies and procedures</a>
+                                <a class="list-group-item list-group-item-action choosable" id="list-profile-list" data-toggle="list" href="#ext22" role="tab" aria-controls="ext22">Develop media and PR strategy</a>
+                                <a class="list-group-item list-group-item-action choosable" id="list-profile-list" data-toggle="list" href="#ext23" role="tab" aria-controls="ext23">Develop media and PR plan and budget</a>
+                                <a class="list-group-item list-group-item-action choosable" id="list-profile-list" data-toggle="list" href="#ext24" role="tab" aria-controls="ext24">Manage media and PR relationships</a>
+                                <a class="list-group-item list-group-item-action choosable" id="list-profile-list" data-toggle="list" href="#ext25" role="tab" aria-controls="ext25">Manage press releases</a>
+                                <a class="list-group-item list-group-item-action choosable" id="list-profile-list" data-toggle="list" href="#ext26" role="tab" aria-controls="ext26">Develop crisis management and emergency communications</a>
+                                <a class="list-group-item list-group-item-action choosable" id="list-profile-list" data-toggle="list" href="#ext27" role="tab" aria-controls="ext27">Manage events and sponsorship</a>
+                                <a class="list-group-item list-group-item-action choosable" id="list-profile-list" data-toggle="list" href="#ext28" role="tab" aria-controls="ext28">Maintain a database of media agencies and contacts</a>
+                              </div>
+                            </div>
+                            <div class="col-8">
+                              <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="ext21" role="tabpanel" aria-labelledby="list-home-list">
+                                  <h3>Develop media and PR policies and procedures</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                                <div class="tab-pane fade" id="ext22" role="tabpanel" aria-labelledby="list-home-list">
+                                  <h3>Develop media and PR strategy</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                                <div class="tab-pane fade" id="ext23" role="tabpanel" aria-labelledby="list-home-list">
+                                  <h3>Develop media and PR plan and budget</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                                <div class="tab-pane fade" id="ext24" role="tabpanel" aria-labelledby="list-home-list">
+                                  <h3>Manage media and PR relationships</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                                <div class="tab-pane fade" id="ext25" role="tabpanel" aria-labelledby="list-home-list">
+                                  <h3>Manage press releases</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                                <div class="tab-pane fade" id="ext26" role="tabpanel" aria-labelledby="list-home-list">
+                                  <h3>Develop crisis management and emergency communications</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                                <div class="tab-pane fade" id="ext27" role="tabpanel" aria-labelledby="list-home-list">
+                                  <h3>Manage events and sponsorship</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                                <div class="tab-pane fade" id="ext28" role="tabpanel" aria-labelledby="list-home-list">
+                                  <h3>Maintain a database of media agencies and contacts</h3>
+                                  <p>(policy information here)</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <!-- Cross sell -->
+                    <div id = "cross-sell" class="container tab-pane">
+                      <h3>Cross sell</h3>
+                      <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                          <a class="nav-link active" href="#">Active</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <!-- Customer request and complaints -->
+                    <div id = "cust-req-complain" class="container tab-pane">
+                      <h3>Customer request and complaints</h3>
+                      <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                          <a class="nav-link active" href="#">Active</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                      </ul>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 <!-- Level 1: Retail Banks - Individual-->
                 <div id="level1-retail-banks-individual" class="container tab-pane">
@@ -632,7 +1204,7 @@
                       <div id="accordion">
                         <div class="card">
                           <div class="card-header">
-                            <a class="card-link" data-toggle="collapse" href="#collapseOne">1. Pre-Sales</a>
+                            <a class="card-link" data-toggle="collapse" href="#collapseOne">Customer Principles</a>
                           </div>
                           <div id="collapseOne" class="collapse show" data-parent="#accordion">
                             <div class="card-body">
@@ -670,7 +1242,25 @@
                                         <div class="card-header"><a class="card-link" data-toggle="collapse" href="#collapse3">1.2.3 Operational guideline</a></div>
                                         <div id="collapse3" class="collapse" data-parent="#accordion1"><div class="card-body">
                                             <ul>
-                                                <li>Includes end to end procedures from branch to head office support services.</li>
+                                                <li>
+                                                  Ensure that the "face to face" requirement for account opening is observed.
+                                                  For account opening of non-personal accounts, the signatories and/or Certifying Officer of the account to
+                                                  opened should be present in the branch.
+                                                </li>
+                                                <li>
+                                                  Inquire if the client already has an existing account with BDO. If there is, proceed to the sub-section B: Account
+                                                  Opening for Existing Client.
+                                                </li>
+                                                <li>
+                                                  Request client to fill up FATCA Questionnaire to verify if the client shall be considered as U.S. Persons/ US entity
+                                                  or with indicia (indicators) of U.S. Status
+                                                </li>
+                                                <li>
+                                                  Inquire from client the type of account to be opened. Explain the product features  and terms and conditions covering the
+                                                  type of account to be opened.
+                                                </li>
+
+                                                <li>xxx</li>
                                             </ul>
                                         </div></div>
                                     </div>
@@ -722,56 +1312,18 @@
                             </div>
                           </div>
                         </div>
-                        <div class="card">
-                          <div class="card-header">
-                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-                            2. Application
-                          </a>
-                          </div>
-                          <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                            <div class="card-body">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card">
-                          <div class="card-header">
-                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
-                              3. Processing
-                            </a>
-                          </div>
-                          <div id="collapseThree" class="collapse" data-parent="#accordion">
-                            <div class="card-body">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card">
-                          <div class="card-header">
-                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
-                              4. Opening
-                            </a>
-                          </div>
-                          <div id="collapseFour" class="collapse" data-parent="#accordion">
-                            <div class="card-body">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card">
-                          <div class="card-header">
-                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">
-                              5. Monitoring
-                            </a>
-                          </div>
-                          <div id="collapseFive" class="collapse" data-parent="#accordion">
-                            <div class="card-body">
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </div>
-                          </div>
-                        </div>
+                        
                       </div>
                     </div>
+
+                    <h5 style="margin-top: 30px;">Related Topics</h5>
+                        <a class="btn tag-pill nav-link" data-toggle="pill" href="#fraud">Fraud/AML</a>
+                        <a class="btn tag-pill nav-link" data-toggle="pill" href="#legal-affairs">Legal affairs</a>
+                        <a class="btn tag-pill nav-link" data-toggle="pill" href="#int-ext-audit">Internal and external audit</a>
+                        <a class="btn tag-pill nav-link" data-toggle="pill" href="#ext-rel">External relationship</a>
+                        <a class="btn tag-pill nav-link" data-toggle="pill" href="#">Cross sell</a>
+                        <a class="btn tag-pill nav-link" data-toggle="pill" href="#">Customer request and complaints</a>
+
                     <div class="like-dislike">
                         <a class="like"><i class="fa fa-thumbs-up"></i></a>
                         <input class="qty-like" name="qty-like" readonly="readonly" type="text" value="0" /> 
@@ -781,6 +1333,12 @@
                       </div>
           
                   </div>
+
+                  <!-- Related Topics -->
+                  <div id="related-topics-page" class="container tab-pane">
+                    <h2>Related Topics</h2>  
+                    
+                </div>
             
             <!-- Level 0: Private Banks Content -->
             <div id="level0-private-banks" class="container tab-pane">
